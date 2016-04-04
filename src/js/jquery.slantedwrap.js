@@ -77,17 +77,22 @@ jQuery.fn.slantedwrap = function() {
                     var lineHeight = parseFloat($(this).css('font-size'))*1.2;
                     y += lineHeight;
                     maxwidth = (height-y)/m;
-                    var text = $(this).text();
+                    var text = $(this).text().trim();
 
                     var words = text.split(' ');
                     var line = '';
                     for (var n = 0; n < words.length; n++) {
-                        var testline = line + words[n] + ' ';
+                        var testline = (line?(line+' '):'') + words[n];
                         var metrics = context.measureText(testline);
                         var testWidth = metrics.width;
+                        
                         if ((testWidth > maxwidth) && (n > 0)) {
+                            if ((line.indexOf(' ') === -1) && (n !== words.length-1)) {
+                                context.fillText(String.fromCharCode(0x2026), halignPos, y+lineHeight);
+                                break;
+                            }
                             context.fillText(line, halignPos, y);
-                            line = words[n] +' ';
+                            line = words[n];
                             y += lineHeight;
                             maxwidth = (height-y)/m;
                         }
