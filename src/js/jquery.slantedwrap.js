@@ -11,7 +11,7 @@ jQuery.fn.slantedwrap = function() {
 
             var canvas = $('<canvas height="'+height+'" width="'+width+'" />');
             $(this).find('.slantedwrap-overlay').append(canvas);
-            $(this).find('.slantedwrap-overlay .slantedwrap-content').hide();
+            $(this).find('.slantedwrap-content').hide();
 
         });
 
@@ -69,7 +69,7 @@ jQuery.fn.slantedwrap = function() {
 
                 var y = 0;
 
-                $(this).find('.slantedwrap-overlay .slantedwrap-content h3, .slantedwrap-overlay .slantedwrap-content p').each(function() {
+                $(this).find('.slantedwrap-content h3, .slantedwrap-content p').each(function() {
                     context.fillStyle = $(this).css('color');
                     context.font = $(this).css('font-size')+' '+$(this).css('font-family');
                     context.textAlign = halign;
@@ -104,7 +104,7 @@ jQuery.fn.slantedwrap = function() {
 
                 var y = height;
 
-                $(this).find('.slantedwrap-overlay .slantedwrap-content h3, .slantedwrap-overlay .slantedwrap-content p').reverse().each(function() {
+                $(this).find('.slantedwrap-content h3, .slantedwrap-content p').reverse().each(function() {
                     context.fillStyle = $(this).css('color');
                     context.font = $(this).css('font-size')+' '+$(this).css('font-family');
                     context.textAlign = halign;
