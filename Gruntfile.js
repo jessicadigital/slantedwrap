@@ -24,8 +24,15 @@ module.exports = function(grunt) {
                     ]
                 }
             }
+        },
+        watch:{
+            all:{
+                files:['src/**/*'],
+                tasks:['build']
+            }
         }
     });
     
-    grunt.registerTask('default', ['less:css','uglify:js']);
+    grunt.registerTask('build', ['less:css','uglify:js']);
+    grunt.registerTask('default', ['build', 'watch:all']);
 };
