@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jessicadigital/jquery-detectfont": "jquery-detectfont#^1.0.0"
+    "jquery-detectfont": "jquery-detectfont#^1.0.0"
   }
 }
