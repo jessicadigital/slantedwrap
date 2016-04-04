@@ -1,0 +1,18 @@
+{
+  "name": "jessicadigital-slantedwrap",
+  "description": "A jQuery plugin to create text wraps at a slanted angle without the need for shape-outside or polyfills.",
+  "main": "dist/js/jquery.slantedwrap.min.js",
+  "authors": [
+    "Jessica Digital <jessica@jessica.digital>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jessicadigital/slantedwrap",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
