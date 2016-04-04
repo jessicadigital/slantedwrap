@@ -85,7 +85,7 @@ jQuery.fn.slantedwrap = function() {
 
                     $(this).find('.slantedwrap-content h3, .slantedwrap-content p').each(function() {
                         context.fillStyle = $(this).css('color');
-                        context.font = $(this).css('font-size')+' '+$(this).css('font-family');
+                        context.font = $(this).css('font-size')+' '+$(this).detectFont();
                         context.textAlign = halign;
 
                         var lineHeight = parseFloat($(this).css('font-size'))*1.2;

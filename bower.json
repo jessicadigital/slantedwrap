@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "jessicadigital/jquery-detectfont": "jquery-detectfont#^1.0.0"
+  }
 }
