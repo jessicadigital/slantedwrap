@@ -42,12 +42,15 @@ Then, reference the plugin script, and call the plugin on document ready:
 })(jQuery);
 ```
 
+If your container is smaller than the breakpoint (768px by default), then the slanted wrapping will not occur. Resize your window to see the wrapping effect.
+
 ## Options
 
-There are three options available:
+There are four options available:
 
 | Option | Description | Values | Default Value |
 |--------|-------------|--------|---------------|
+| breakpoint | Minimum width at which wrapping should occur | integer, 0..Max div width | 768 |
 | halign | Horizontal Alignment | left, right | left |
 | valign | Vertical Alignment | top, bottom | top |
 | wrapstart | How far across the width of the div to create the wrapping area, as a fraction | float, 0..1 | 1 |
