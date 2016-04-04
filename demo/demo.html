@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jessicadigital/slantedwrap jQuery Plugin Demo</title>
+        <link href="../dist/css/jquery.slantedwrap.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="slantedwrap" data-wrapstart="1" data-halign="right" data-valign="bottom">
+            <div class="slantedwrap-overlay">
+                <div class="slantedwrap-content">
+                    <h3>Header goes here</h3>
+                    <p>In hac habitasse platea dictumst. Sed sit amet lorem varius, venenatis felis id, mattis velit. Sed mattis elit quam, vel feugiat lectus dapibus eu. In in ligula tempor, dictum ipsum eu, dapibus sapien. Vivamus scelerisque massa luctus neque ornare lacinia eu a metus. Integer bibendum libero in sapien ultrices eleifend. Sed hendrerit interdum pharetra. Aenean tristique arcu tincidunt sapien convallis imperdiet. Vivamus ultrices tellus diam, ut convallis metus viverra ut. </p>
+                </div>
+            </div>
+        </div>
+        <div class="slantedwrap" data-wrapstart="0.5" data-halign="left" data-valign="top">
+            <div class="slantedwrap-overlay">
+                <div class="slantedwrap-content">
+                    <h3>Another header</h3>
+                    <p>In hac habitasse platea dictumst. Sed sit amet lorem varius, venenatis felis id, mattis velit. Sed mattis elit quam, vel feugiat lectus dapibus eu. In in ligula tempor, dictum ipsum eu, dapibus sapien. Vivamus scelerisque massa luctus neque ornare lacinia eu a metus. Integer bibendum libero in sapien ultrices eleifend. Sed hendrerit interdum pharetra. Aenean tristique arcu tincidunt sapien convallis imperdiet. Vivamus ultrices tellus diam, ut convallis metus viverra ut. </p>
+                </div>
+            </div>
+        </div>
+        
+        <p><small>Background image from <a href="https://commons.wikimedia.org/wiki/File:London_from_a_hot_air_balloon.jpg" target="_blank">Wikimedia Commons</a>, CC2.0 Generic, by <a href="https://www.flickr.com/photos/stirlingackroyd/" target="_blank">Daniel Chapma</a>.</small></p>
+        
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+        <script src="../dist/js/jquery.slantedwrap.min.js"></script>
+        <script>
+            (function($){
+                $('.slantedwrap').slantedwrap();
+            })(jQuery);
+        </script>
+    </body>
+</html>

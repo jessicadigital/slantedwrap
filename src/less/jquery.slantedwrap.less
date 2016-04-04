@@ -1,0 +1,47 @@
+.slantedwrap {
+    background-image:url(https://upload.wikimedia.org/wikipedia/commons/3/3a/London_from_a_hot_air_balloon.jpg);
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:500px;
+    position:relative;
+    width:100%;
+
+    .slantedwrap-overlay {
+        background-color:rgba(0,0,0,0.2);
+        border:0.0625em solid white;
+        bottom:0.5em;
+        left:0.5em;
+        position:absolute;
+        right:0.5em;
+        top:0.5em;
+
+        canvas {
+            bottom:0;
+            left:0;
+            position:absolute;
+            right:0;
+            top:0;
+        }
+        .slantedwrap-content {
+            bottom:0;
+            left:0;
+            padding:0.5em;
+            position:absolute;
+            right:0;
+
+            h3 {
+                color:#ffffff;
+                font-family:'Arial',sans-serif;
+                font-size:160%;
+                font-weight:normal;
+            }
+
+            p {
+                color:#ffffff;
+                font-family:'Arial',sans-serif;
+                font-size:70%;
+            }
+        }
+    }
+}
