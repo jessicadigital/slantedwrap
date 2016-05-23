@@ -27,13 +27,14 @@ jQuery.fn.slantedwrap = function() {
             // Load options
             var breakpoint = $(this).data('breakpoint') || 768;
             var halign = $(this).data('halign') || 'left';
+            var offset = $(this).data('offset') || 0.1;
             var valign = $(this).data('valign') || 'top';
             var start = $(this).data('wrapstart') || 1;
             var padding = $(this).data('wrappadding') || 16;
-            
+
             // Grab the width
             var width = $(this).find('.slantedwrap-overlay').width();
-            
+
             // Check width against breakpoint
             if (breakpoint > width) {
                 // Do not wrap text! Show fallback div
@@ -62,12 +63,16 @@ jQuery.fn.slantedwrap = function() {
                 if (halign === 'left') {
                     context.moveTo(0, (valign === 'top')?0:height);
                     context.lineTo(start*width, (valign === 'top')?0:height);
-                    context.lineTo(0, (valign === 'top')?height:0);   
+                    context.lineTo(width*offset, (valign === 'top')?height:0);
+                    context.lineTo(0, (valign === 'top')?height:0);
+                    context.lineTo(0, (valign === 'top')?0:height);
                 }
                 else {
                     context.moveTo(width, (valign === 'top')?0:height);
                     context.lineTo((1-start)*width, (valign === 'top')?0:height);
-                    context.lineTo(width, (valign === 'top')?height:0);  
+                    context.lineTo(width*(1-offset), (valign === 'top')?height:0);
+                    context.lineTo(width, (valign === 'top')?height:0);
+                    context.lineTo(width, (valign === 'top')?0:height);
                 }
                 context.closePath();
                 context.fill();
