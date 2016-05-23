@@ -52,6 +52,7 @@ There are four options available:
 |--------|-------------|--------|---------------|
 | breakpoint | Minimum width at which wrapping should occur | integer, 0..Max div width | 768 |
 | halign | Horizontal Alignment | left, right | left |
+| offset | Offset width for shortest side of overlay | float, 0..1 | 0.1 |
 | valign | Vertical Alignment | top, bottom | top |
 | wrapstart | How far across the width of the div to create the wrapping area, as a fraction | float, 0..1 | 1 |
 
