@@ -1,4 +1,5 @@
 (function($) {
+    console.info('TEST MODE');
     $.fn.reverse = [].reverse;
 
     $.fn.slantedwrap = function() {
@@ -7,11 +8,13 @@
 
         $.fn.slantedwrap.init = function() {
             jqueryContext.each(function() {
-                var height = $(this).find('.slantedwrap-overlay').height();
-                var width = $(this).find('.slantedwrap-overlay').width();
+                if (!$(this).find('canvas').length) {
+                    var height = $(this).find('.slantedwrap-overlay').height();
+                    var width = $(this).find('.slantedwrap-overlay').width();
 
-                var canvas = $('<canvas height="'+height+'" width="'+width+'" />');
-                $(this).find('.slantedwrap-overlay').append(canvas);
+                    var canvas = $('<canvas height="'+height+'" width="'+width+'" />');
+                    $(this).find('.slantedwrap-overlay').append(canvas);
+                }
 
             });
 
@@ -39,12 +42,13 @@
                 // Check width against breakpoint
                 if (breakpoint > width) {
                     // Do not wrap text! Show fallback div
-                    $(this).find('.slantedwrap-content').show();
+                    $(this).find('.slantedwrap-content h3, .slantedwrap-content p').show();
+                    $(this).find('.slantedwrap-content p.aftercontent').css('text-align','left').css('margin-top',0);
                     $(this).find('canvas').hide();
                 }
                 else {
                     // Use canvas - render text
-                    $(this).find('.slantedwrap-content').hide();
+                    $(this).find('.slantedwrap-content h3, .slantedwrap-content p:not(.aftercontent)').hide();
                     $(this).find('canvas').show();
 
                     var height = $(this).find('.slantedwrap-overlay').height();
@@ -89,7 +93,7 @@
 
                         var y = 0;
 
-                        $(this).find('.slantedwrap-content h3, .slantedwrap-content p').each(function() {
+                        $(this).find('.slantedwrap-content h3, .slantedwrap-content p:not(.aftercontent)').each(function() {
                             context.fillStyle = $(this).css('color');
                             context.font = $(this).css('font-size')+' '+$(this).detectFont();
                             context.textAlign = halign;
@@ -123,6 +127,9 @@
                             context.fillText(line, halignPos, y);
                             y += 8;
                         });
+                        if ($(this).find('.slantedwrap-content p.aftercontent').length) {
+                            $(this).find('.slantedwrap-content p.aftercontent').css('text-align', halign).css('margin-top', (y+16)+'px');
+                        }
                     }
                     else {
                         // For align bottom, process text in reverse
